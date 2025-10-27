@@ -434,7 +434,7 @@ void init_snapcast(QueueHandle_t audioQHdl) {
   audioDACQHdl = audioQHdl;
   audioDACSemaphore = xSemaphoreCreateMutex();
   audioDAC_data.mute = true;
-  audioDAC_data.volume = 100;
+  audioDAC_data.volume = -1; // invalid volume to force update on first set
 }
 
 /**
